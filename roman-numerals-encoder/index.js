@@ -5,9 +5,7 @@ function solution(number) {
     let conversions = '';
   
     for (let i=0; i<denominations_natural.length; i++) {
-      console.log(i);
       while (number >= denominations_natural[i]) {
-        console.log('Iterate', number);
         conversions += denominations_roman[i];
         number -= denominations_natural[i];
       }
