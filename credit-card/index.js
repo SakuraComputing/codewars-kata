@@ -1,26 +1,20 @@
 function validate(n) {
 
-  const cc = (""+ n).split('');
+  n = n.toString().split('').map(Number).reverse();
 
-  let cs = [];
+  console.log(n);
 
-  if(cc.length % 2 !== 0) {
-    for (let i = (cc.length - 1); i >= 0; i--) {
-      ((i + 1) % 2 !== 0) ? 
-        cs.unshift(parseInt(cc[i])) : cc[i] < 9 ? cs.unshift(cc[i] *= 2) 
-        : cs.unshift((cc[i] *= 2) - 9);
+  return n.reduce(function (sum, digit, index) {
+    if (index & 1) {
+      digit <<= 1;
     }
-  } else {
-    for (let i = (cc.length - 1); i >= 0; i--) {
-      ((i + 1) % 2 !== 0) ?
-       (cc[i] < 9) ? cs.unshift(cc[i] *= 2) : cs.unshift((cc[i] *= 2) - 9)
-       : cs.unshift(parseInt(cc[i]));
-    }
-  }
-  return cs.reduce((a, b) => a + b, 0) % 10 === 0 ? true : false;
+    if (digit > 9) digit -= 9;
+    return sum + digit;
+  }, 0) % 10 == 0;
+
 }
 
-console.log(validate(1714));
+// console.log(validate(1714));
 console.log(validate(12345));
-console.log(validate(891));
-console.log(validate(1230));
+// console.log(validate(891));
+// console.log(validate(1230));
