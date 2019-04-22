@@ -2,21 +2,19 @@ function capitalsFirst(str) {
 
     let l = [], u = [];
 
-    str.split(' ').map(word => {
-        if(word.charAt(0).match(/^[A-Z]+$/i))
-          word.charAt(0) == word.charAt(0).touCase() ?
-            u.push(word.trim()) : l.push(word.trim());
-        }
-    );
+    str.split(' ').map(w => {
+        if(w.charAt(0).match(/^[A-Z]+$/i))
+          w.charAt(0) == w.charAt(0).toUpperCase() ? u.push(w) : l.push(w);
+    });
 
     if(u.length > 0 && l.length > 0) 
-        capStr = u.join(' ') + " " + l.join(' ') 
+        cap = u.join(' ') + " " + l.join(' ') 
     else if (u.length > 0) {
-        capStr = u.join(' ')
+        cap = u.join(' ')
     } else if (l.length > 0){
-        capStr = l.join(' ')
+        cap = l.join(' ')
     }
-    return capStr;
+    return cap;
 }
 
 

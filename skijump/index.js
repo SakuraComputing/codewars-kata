@@ -6,13 +6,13 @@ function skiJump(mountain) {
 
     switch(true) {
         case (jump < 10):
-            return `${jump} metres:He\'s crap!`;
-        case jump > 10 && jump < 25:
-            return `${jump} metres:He\'s ok!`;
-        case jump > 25 && jump < 50:
-            return `${jump} metres:He\'s flying!`;
-        case jump > 50:
-            return `${jump} metres:Gold!!!`;
+            return `${jump} metres: He\'s crap!`;
+        case (jump > 10 && jump < 25):
+            return `${jump} metres: He\'s ok!`;
+        case (jump > 25 && jump < 50):
+            return `${jump} metres: He\'s flying!`;
+        case (jump > 50):
+            return `${jump} metres: Gold!!`;
     }
 }
 

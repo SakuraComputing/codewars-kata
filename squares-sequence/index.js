@@ -1,10 +1,9 @@
-function squares(x, n) {
+function bingo(a) {
 
-    if(n <= 0) return [];
-    let sq = [x];
-    for (let i = 1; i < n; i++) sq.push(Math.pow(sq[i  - 1], 2));
-    return sq;
+  return [2, 7, 9, 14, 15].every(r => a.includes(r)) ? "WIN" : "LOSE";
+
 }
 
-console.log(squares(3, 3));
+console.log(bingo([1,2,3,4,5,6,7,8,9,10]));
+console.log(bingo([21,13,2,7,5,14,7,15,9,10]));
 
